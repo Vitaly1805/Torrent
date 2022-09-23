@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /
+
+DirectoryIndex torrent.php
+
+RewriteRule ^css\/.* - [L]
+RewriteRule ^js\/.* - [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule  ^(.*)$ torrent.php?$1 [L,QSA]
